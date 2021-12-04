@@ -13,7 +13,6 @@ pub fn different_cases(a: usize,c: &[&str]){
     }// finding breaks+1 and pushing them in
     new_vec.push(c.len()); // pushing the end
     loop{
-        // how many cases? im asking you to think. Yes, you! so how many slices do we need to send
         sort_and_print(&c[new_vec[count]..new_vec[count+1]]);// doing the main work
         count +=1; // adding to count 
         if count == a{
@@ -76,7 +75,7 @@ fn sort_and_print(b: &[&str]){
         }
         
     }else{
-        let mut count = 0;
+        let mut count = checker-1;
         loop {
 
             if (vec2sum - vec2[count] + vec1[count]).wrapping_sub(vec1sum - vec1[count] + vec2[count]) < difference{
@@ -87,33 +86,10 @@ fn sort_and_print(b: &[&str]){
                 difference = reassign.0;
                 vec1sum = reassign.1;
                 vec2sum = reassign.2;
-                count +=1;
+                count -=1;
             }else{
                 break;
             }
-            
-            // if checker == 0{
-            //     break;
-            // }else{
-            //     // if greatest[checker-1] <= difference {
-            //     //     let smallest = least[0];
-            //     //     least[0] =  greatest[checker-1];
-            //     //     least.rotate_left(1);
-            //     //     greatest[checker-1] = smallest;
-            //     //     greatest[..=checker-1].rotate_right(1);
-            //     //     let (test1, test2,test3) = if greatest.iter().sum::<usize>() > least.iter().sum::<usize>(){
-            //     //         (greatest.iter().sum::<usize>() - least.iter().sum::<usize>(),greatest,least)
-            //     //     }else{
-            //     //         (least.iter().sum::<usize>() - greatest.iter().sum::<usize>(),least,greatest)
-            //     //     };
-            //     //     greatest = test2;
-            //     //     least = test3;
-            //     //     difference = test1;
-            //     //     checker = greatest.len();
-            //     //     continue;
-            //     // }
-            //     // checker-=1
-            // }
         }
     }
     match least_val{
