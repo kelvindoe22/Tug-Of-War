@@ -86,7 +86,7 @@ fn sort_and_print(b: &[&str]){
                 difference = reassign.0;
                 vec1sum = reassign.1;
                 vec2sum = reassign.2;
-                count +=1;
+                count += 1;
             }else{
                 break;
             }

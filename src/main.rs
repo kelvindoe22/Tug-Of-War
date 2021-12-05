@@ -2,7 +2,7 @@ mod lib;
 
 use std::{fs};
 use lib::*;
-// yes my variable naming is shit! Deal with it
+
 fn main(){
     let content = fs::read_to_string("ama.file").expect("Corrupted file");// reads the file
     let c: Vec<&str> = content.as_str().split("\r\n").collect();//splits them by newline and puts them in a vector
