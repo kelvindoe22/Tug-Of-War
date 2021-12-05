@@ -75,7 +75,7 @@ fn sort_and_print(b: &[&str]){
         }
         
     }else{
-        let mut count = checker-1;
+        let mut count = 0;
         loop {
 
             if (vec2sum - vec2[count] + vec1[count]).wrapping_sub(vec1sum - vec1[count] + vec2[count]) < difference{
@@ -86,7 +86,7 @@ fn sort_and_print(b: &[&str]){
                 difference = reassign.0;
                 vec1sum = reassign.1;
                 vec2sum = reassign.2;
-                count -=1;
+                count +=1;
             }else{
                 break;
             }
